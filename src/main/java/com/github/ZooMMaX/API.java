@@ -26,9 +26,6 @@ public class API {
         return new String[0];
     }
 
-    public static String [] update(String updates){
-        return  null;
-    }
 
     public static JSONObject json(String j){
         return new JSONObject(j);
