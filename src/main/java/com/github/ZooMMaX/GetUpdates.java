@@ -2,15 +2,15 @@ package com.github.ZooMMaX;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-public class API {
+public class GetUpdates {
     //Получаем и сбрасываем обновления
     public static String[] getUpdates(String bottoken) {
         //Получение обновлений
         String result = http.get(bottoken + "/getUpdates?offset=0");
-        String ok = json(result).get("ok").toString();
+        String ok = Json.jObject(result).get("ok").toString();
         if (ok.equals("true")) {
-            if (!json(result).getJSONArray("result").isEmpty()) {
-                JSONArray jsonArray = json(result).getJSONArray("result");
+            if (!Json.jArray(result,"result").isEmpty()) {
+                JSONArray jsonArray = Json.jArray(result,"result");
                 String[] ret = new String[jsonArray.length()];
                 for (int x = 0; x < jsonArray.length(); x++) {
                     ret[x] = jsonArray.getJSONObject(x).toString();
@@ -24,10 +24,5 @@ public class API {
             }
         }
         return new String[0];
-    }
-
-
-    public static JSONObject json(String j){
-        return new JSONObject(j);
     }
 }
