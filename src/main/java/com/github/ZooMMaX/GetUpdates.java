@@ -1,6 +1,5 @@
 package com.github.ZooMMaX;
 import org.json.JSONArray;
-import org.json.JSONObject;
 
 public class GetUpdates {
     //Получаем и сбрасываем обновления

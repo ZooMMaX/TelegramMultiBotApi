@@ -1,16 +1,21 @@
 package com.github.ZooMMaX;
 
+import org.json.JSONObject;
+
 public class GetMessage{
 
     String json;
+    JSONObject messageJobj;
     public GetMessage(String json){
         this.json=json;
+        this.messageJobj=Json.jObject(json).getJSONObject("message");
     }
+    
     public String messageId(){
-
-        return Json.jObject(json).get("message_id").toString();
+        return messageJobj.get("message_id").toString();
     }
+    
     public String messageText(){
-        return Json.jObject(json).getString("text");
+        return messageJobj.getString("text");
     }
 }
