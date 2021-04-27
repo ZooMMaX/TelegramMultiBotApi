@@ -6,18 +6,30 @@ import org.json.JSONObject;
 
 public class GetMessage{
 	String json;
-	JSONObject messageJobj;
+	JSONObject jObj;
 	
 	public GetMessage(String json){
 		this.json=json;
-		this.messageJobj=Json.jObject(json).getJSONObject("message");
+		this.jObj=Json.jObject(json).getJSONObject("message");
 	}
 	
-	public String messageId(){
-		return messageJobj.get("message_id").toString();
+	public String message_id(){
+		return jObj.get("message_id").toString();
 	}
 	
-	public String messageText(){
-		return messageJobj.getString("text");
+	public String text(){
+		return jObj.getString("text");
+	}
+	
+	public long date(){
+		return jObj.getLong("date");
+	}
+	
+	public GetMessageChat getChat(){
+		return new GetMessageChat(json);
+	}
+	
+	public GetMessageFrom getFrom(){
+		return new GetMessageFrom(json);
 	}
 }
