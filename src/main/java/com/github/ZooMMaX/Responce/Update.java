@@ -1,6 +1,6 @@
 package com.github.ZooMMaX.Responce;
 
-import com.github.ZooMMaX.Utils.Json;
+import com.github.ZooMMaX.Responce.UpdateId.GetUpdateId;
 
 public class Update {
 	String json;
@@ -8,12 +8,8 @@ public class Update {
 	public Update(String json){
 		this.json=json;
 	}
-	
-	public GetMessage getMessage() {
-		return new GetMessage(json);
-	}
-	
-	public long update_id(){
-		return Json.jObject(json).getLong("update_id");
+
+	public GetUpdateId getUpdateId(){
+		return new GetUpdateId(json);
 	}
 }
