@@ -110,6 +110,13 @@ public class Message {
     public VideoNote video_note(){
         return new VideoNote(jsonObject.getJSONObject("video_note"));
     }
-
+    
+    public Voice voice(){
+    	return new Voice(jsonObject.getJSONObject("voice"));
+    }
+    
+    public String caption(){
+    	return jsonObject.getString("caption");
+    }
 
 }
