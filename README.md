@@ -36,11 +36,9 @@ class Listener extends TimerTask {
 
     @Override
     public void run() {
-        List<String> updates = Updates.get(bottoken);
+        List<Update> updates = Updates.get(bottoken);
         if (updates != null) {
-            for (String upd : updates) {
-                System.out.println(upd);
-                Update update = new Update(upd);
+            for (Update upd : updates) {
                 System.out.println(update.getUpdateID());
                 System.out.println(update.getMessage().message_id());
                 System.out.println(update.getMessage().chat().first_name() + " " + update.getMessage().chat().last_name());
