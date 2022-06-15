@@ -6,7 +6,7 @@
 
     <groupId>ru.zoommax</groupId>
     <artifactId>TelegramMultiBotApi</artifactId>
-    <version>1.0</version>
+    <version>1.2</version>
 	<name>Telegram Multi Bot API</name>
 	<description>Telegram java API for creating multibots</description>
 	<url>https://github.com/ZooMMaX/TelegramMultiBotApi</url>
@@ -29,6 +29,10 @@
 			<id>ossrh</id>
 			<url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
 		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
 	</distributionManagement>
 
 	<developers>
@@ -48,6 +52,7 @@
 		<plugin.maven.source.ver>3.2.1</plugin.maven.source.ver>
 		<plugin.maven.javadoc.ver>3.4.0</plugin.maven.javadoc.ver>
 		<plugin.maven.gpg.ver>3.0.1</plugin.maven.gpg.ver>
+		<plugin.maven.compiler.ver>3.10.1</plugin.maven.compiler.ver>
     </properties>
 
 	<build>
@@ -113,10 +118,12 @@
 			</plugins>
 		</pluginManagement>
 
+
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
 				<configuration>
 					<source>${maven.compiler.source}</source>
 					<target>${maven.compiler.target}</target>
