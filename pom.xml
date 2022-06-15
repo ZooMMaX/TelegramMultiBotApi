@@ -6,7 +6,7 @@
 
     <groupId>ru.zoommax</groupId>
     <artifactId>TelegramMultiBotApi</artifactId>
-    <version>1.2</version>
+    <version>1.2.1</version>
 	<name>Telegram Multi Bot API</name>
 	<description>Telegram java API for creating multibots</description>
 	<url>https://github.com/ZooMMaX/TelegramMultiBotApi</url>
