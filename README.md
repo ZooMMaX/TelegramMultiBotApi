@@ -1,4 +1,5 @@
 # Telegram multi bot api
+![Maven Central](https://img.shields.io/maven-central/v/ru.zoommax/TelegramMultiBotApi?color=00ff)
 ## Maven Central
 
 ```xml
